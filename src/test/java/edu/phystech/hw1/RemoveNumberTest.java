@@ -8,7 +8,21 @@ import org.junit.jupiter.api.Assertions;
 public class RemoveNumberTest {
 
     private static int[] removeElement(int[] input, int element) {
-        return input;
+        int count = 0;
+        for (int numb : input) { // Сижу считаю кол-во вхождений для задания размера массива (можно ли использовать список в этой задачи???)
+            if (numb != element) {
+                count++;
+            }
+        }
+        int[] res = new int[count];
+        int i = 0;
+        for (int numb : input) {
+            if (numb != element) {
+                res[i] = numb;
+                i++;
+            }
+        }
+        return res;
     }
 
     @Test

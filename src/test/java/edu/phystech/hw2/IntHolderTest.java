@@ -9,22 +9,25 @@ class IntHolder {
 
     private int value;
 
-    public int getValue() {
-        return 0;
+    public int getValue() { return value; }
+
+    public void swap(IntHolder other) {
+        int temp = this.value;
+        this.value = other.value;
+        other.value = temp;
     }
 
-    public void swap(IntHolder other) {}
+    public IntHolder(int value) { this.value = value; }
 
-    public IntHolder(int value) {}
+    public static IntHolder valueOf(int x) { return new IntHolder(x); }
 
-    public static IntHolder valueOf(int x) { return null; }
+    public IntHolder plus(IntHolder rhv) { return new IntHolder(this.value + rhv.value); }
 
-    public IntHolder plus(IntHolder rhv) { return null; }
+    public IntHolder minus(IntHolder rhv) { return new IntHolder(this.value - rhv.value); }
 
-    public IntHolder minus(IntHolder rhv) { return null; }
+    public IntHolder times(IntHolder rhv) { return new IntHolder(this.value * rhv.value); }
 
-    public IntHolder times(IntHolder rhv) { return null; }
-    public IntHolder div(IntHolder rhv) { return null; }
+    public IntHolder div(IntHolder rhv) { return new IntHolder(this.value / rhv.value); }
 
 }
 

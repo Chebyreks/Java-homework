@@ -29,6 +29,17 @@ class IntHolder {
 
     public IntHolder div(IntHolder rhv) { return new IntHolder(this.value / rhv.value); }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        IntHolder intHolder = (IntHolder) o;
+        return value == intHolder.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(value);
+    }
 }
 
 public class IntHolderTest {

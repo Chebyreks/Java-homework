@@ -10,7 +10,7 @@ public final class Failure<T> implements Result<T> {
 
     @Override
     public boolean isFailure() {
-        return false;
+        return true;
     }
 
     @Override
@@ -19,17 +19,15 @@ public final class Failure<T> implements Result<T> {
     }
 
     @Override
-    public T getOrDefault(T defaultValue) {
-        return null;
-    }
+    public T getOrDefault(T defaultValue) { return defaultValue; } //Huh???
 
     @Override
     public Throwable getExceptionOrNull() {
-        return null;
+        return e;
     }
 
     @Override
     public <R> Result<R> map(Function<T, R> transform) {
-        return null;
+        return new Failure<R>(e);
     }
 }

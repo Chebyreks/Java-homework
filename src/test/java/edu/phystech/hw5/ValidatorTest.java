@@ -12,8 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ValidatorTest {
 
-    private Validator validator = object -> {
-    };
+    private Validator validator = Validator.getValidator();
 
     @Test
     void notBlankWorks() {
